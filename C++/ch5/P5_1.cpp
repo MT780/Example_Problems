@@ -19,7 +19,7 @@ Person::Person(string pname, int page)
 
 string Person::get_name() const
 {
-	return pname;
+	return name;
 }
 
 void Person::get_age() const
