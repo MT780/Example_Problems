@@ -14,6 +14,8 @@ class Person
 		 */
 		Person();
 
+		Person(string pname);
+
 		/*
 		 * Sets name and age to pname and page in that respective order.
 		 */
@@ -23,7 +25,7 @@ class Person
 		 * Provides user with name
 		 * @return the name of the person
 		 */
-		void get_name() const;
+		string get_name() const;
 
 		/*
 		 * Provides user with the age

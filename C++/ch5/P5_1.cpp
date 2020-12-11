@@ -5,15 +5,21 @@ Person::Person()
 	age = 0;
 }
 
+Person::Person(string pname)
+{
+	name = pname;
+	age = 0;
+}
+
 Person::Person(string pname, int page)
 {
 	name = pname;
 	age = page;
 }
 
-void Person::get_name() const
+string Person::get_name() const
 {
-	cout << "Name is: " << name << endl;
+	return pname;
 }
 
 void Person::get_age() const
