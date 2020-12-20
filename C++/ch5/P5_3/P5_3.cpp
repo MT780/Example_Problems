@@ -1,5 +1,11 @@
 #include "P5_3.h"
 
+Address::Address()
+{
+	house_number = 0;
+	postal_code = 0;
+}
+
 Address::Address(int& house_number, string& street, string& apt_number, string& city, string& state, int& postal_code)
 {
 	this->house_number = house_number;
@@ -42,15 +48,15 @@ void Address::comes_before(Address& next_address)
 {
 	if (next_address.get_postal() > postal_code)
 	{
-		next_address.print();
-		cout << "\ncomes before... \n" << endl;
 		print();
+		cout << "\ncomes before... \n" << endl;
+		next_address.print();
 	}
 
 	else
 	{
-		print();
-		cout << "\ncomes before... \n" << endl;
 		next_address.print();
+		cout << "\ncomes before... \n" << endl;
+		print();
 	}
 }

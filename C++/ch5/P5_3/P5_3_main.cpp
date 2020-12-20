@@ -29,18 +29,53 @@ int main()
 
 	cout << "Postal code: ";
 	cin >> postal_code;
+	cout << endl;
 
 	if(apt_number != "")
 	{
-		Address first(house_number, street, apt_number, city, state, postal_code);
+		Address ad_w_apt(house_number, street, apt_number, city, state, postal_code);
+
+		ad_w_apt.print();
+
+
+	cout << "Is there another address you wish to compare?" << endl;
+
+	char answer;
+	cin >> answer;
+
+	if(answer == 'Y')
+	{
+		cout << "House number: ";
+		cin >> house_number;
+		//cin.ignore(256, '\n');
+
+		cout << "Street: ";
+		getline(cin, street);
+
+		cout << "Apartment: ";
+		getline(cin, apt_number);
+
+		cout << "City: ";
+		cin >> city;
+
+		cout << "State: ";
+		cin >> state;
+
+		cout << "Postal code: ";
+		cin >> postal_code;
+		cout << endl;
+
+		Address second(house_number, street, apt_number, city, state, postal_code);
+		ad_w_apt.comes_before (second);
+	}	
 	}
 	
 	else
 	{
-		Address first(house_number, street, city, state, postal_code);
-	}
+		Address ad_wout_apt(house_number, street, city, state, postal_code);
 
-	first.print();
+		ad_wout_apt.print();
+
 
 	cout << "Is there another address you wish to compare?" << endl;
 
@@ -67,18 +102,13 @@ int main()
 
 		cout << "Postal code: ";
 		cin >> postal_code;
+		cout << endl;
 
-		if(apt_number != "")
-		{
-			first.comes_before (Address second(house_number, street, apt_number, city, state, postal_code));
-		}
-
-		else
-		{
-			first.comes_before(Address second(house_number, street, city, state, postal_code));
-		}
+		
+		Address second(house_number, street, city, state, postal_code);
+		ad_wout_apt.comes_before (second);
 	}	
-
+	}
 	return 0;
 
 }
