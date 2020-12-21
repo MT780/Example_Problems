@@ -10,14 +10,14 @@ class Account
 {
 	public:
 		//Default constructor
-		Acount();
+		Account();
 
 		//Adds money towards balance
 		//@param money contains amount
-		void add_to_account(double& money);
+		void deposit(double& money);
 
 		//Withdraws money from account, and 5$ penalty if overdrawn
-		double withdraw_from_account();
+		void withdraw(double& withdraw_amnt);
 
 		//Returns balance to user
 		double get_balance();
