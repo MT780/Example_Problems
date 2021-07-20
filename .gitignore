@@ -3,3 +3,6 @@
 
 # Executable file
 *.out
+
+#VS Code files
+*.json
