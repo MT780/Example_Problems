@@ -1,6 +1,11 @@
+//Finds the union and intersect of both sets a and b
 #include <iostream>
 #include <set>
 
+/* Finds the union between set a and b then returns the union
+  @param a, the first set of integers
+  @param b, the second set of integers
+*/
 std::set<int> set_union(std::set<int> a, std::set<int> b)
 {
    std::set<int>::iterator pos;
@@ -39,6 +44,9 @@ std::set<int> intersection(std::set<int> a, std::set<int> b)
    return temp_inter;
 }
 
+/* Prints out given set.
+  @param i, the set to be examined
+*/
 void print(const std::set<int>& i)
 {
    std::set<int>::iterator pos;
